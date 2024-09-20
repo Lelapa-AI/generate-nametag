@@ -4,7 +4,7 @@ from PIL import Image, ImageDraw, ImageFont
 # Function to generate image with name
 def generate_nametag(name):
     # Create an image with white background
-    img = Image.new('RGB', (113, 188), color = (255, 255, 255))
+    img = Image.new('RGB', (188, 113), color = (255, 255, 255))
     d = ImageDraw.Draw(img)
     
     # Load a font
