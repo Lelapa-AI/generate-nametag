@@ -1,6 +1,6 @@
 #!/bin/python3
 
-from p5 import image, fill, rect, load_image, no_stroke, run, size, Color, save_canvas
+from p5 import image, fill, rect, load_image, no_stroke, run, size, Color, save_canvas, redraw
 from random import randint, seed
 
 # Draw a planet based on chosen size and colour
@@ -70,7 +70,7 @@ def setup():
 
   
 def draw():
-  
+    name = input("Enter a name: ")
     # Dictionary of letters and their encoded shape
     code = {
         'a': ['shape 3', 150, 'pink'],
@@ -103,9 +103,9 @@ def draw():
     }
 
     
-    global name
+    #global name
 
-    seed(10) # Generate the same random numbers each time
+    seed(5) # Generate the same random numbers each time
     no_stroke()
     draw_background()
 
@@ -125,9 +125,13 @@ def draw():
             shape_3(item[1], item[2])
     filename = name +".png"
     save_canvas(filename)
+
+def key_pressed():
+    # Refresh the drawing on key press
+    redraw()
     
 
 if __name__ == '__main__':
-    print('Enter your name to make some encoded artwork:')
-    name = input()
-    run(frame_rate=10)
+    #print('Enter your name to make some encoded artwork:')
+    #name = input()
+    run(frame_rate=20)
