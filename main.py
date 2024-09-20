@@ -57,16 +57,16 @@ def setup():
     size(400, 400)
 
     # Load the images needed into variables
-    purple_planet = load_image('purple_planet.png')
-    orange_planet = load_image('orange_planet.png')
-    green_planet = load_image('green_planet.png')
-    astropi = load_image('astropi.png')
-    astronaut = load_image('astronaut.png')
-    satellite = load_image('satellite.png')
-    grey_moon = load_image('moon.png')
-    yellow_star = load_image('yellow_star.png')
-    pink_star = load_image('pink_star.png')
-    blue_star = load_image('blue_star.png')
+    purple_planet = load_image('pat1.png')
+    orange_planet = load_image('pat2.png')
+    green_planet = load_image('pat3.png')
+    astropi = load_image('pat4.png')
+    astronaut = load_image('pat5.png')
+    satellite = load_image('pat6.png')
+    grey_moon = load_image('pat7.png')
+    yellow_star = load_image('pat8.png')
+    pink_star = load_image('pat9.png')
+    blue_star = load_image('logo.png')
 
   
 def draw():
@@ -134,4 +134,4 @@ def key_pressed():
 if __name__ == '__main__':
     #print('Enter your name to make some encoded artwork:')
     #name = input()
-    run(frame_rate=20)
+    run(frame_rate=10)
