@@ -1,6 +1,6 @@
 #!/bin/python3
 
-from p5 import image, fill, rect, load_image, no_stroke, run, size, Color
+from p5 import image, fill, rect, load_image, no_stroke, run, size, Color, save_canvas
 from random import randint, seed
 
 # Draw a planet based on chosen size and colour
@@ -123,10 +123,11 @@ def draw():
             shape_2(item[1], item[2])
         elif item[0] == 'shape 3':
             shape_3(item[1], item[2])
+    filename = name +".png"
+    save_canvas(filename)
+    
 
-print('Enter your name to make some encoded artwork:')
-name = input()
-
-
-
-run(frame_rate=10)
+if __name__ == '__main__':
+    print('Enter your name to make some encoded artwork:')
+    name = input()
+    run(frame_rate=10)
