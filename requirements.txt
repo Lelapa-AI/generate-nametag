@@ -1,4 +1,3 @@
 streamlit
-Pillow
 cython
 p5
