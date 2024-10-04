@@ -48,7 +48,7 @@ def draw_background():
     # Background colour
     #fill(Color(255, 255, 255)) #white
     fill(Color(0,0,0)) #black
-    rect(0, 0, 400, 620)
+    rect(0, 0, 400, 666)
 
 def setup():
   
@@ -57,7 +57,7 @@ def setup():
     global grey_moon, yellow_star, pink_star, blue_star
     global pat1, pat2, pat3, pat4, pat5, pat6, pat7, pat8, pat9, logo
 
-    size(400, 620)
+    size(400, 666)
 
     # Load the images needed into variables
     logo = load_image('logo.png')
@@ -167,25 +167,24 @@ def draw():
 
 
     fill(Color(255,255,255)) #whitejade
-    rect(0, 400, 400, 220)
+    rect(0, 420, 400, 300)
 
 
     fill(Color(0,0,0))
-    my_font = create_font("Barlow-Bold.ttf", 32)
+    my_font = create_font("Barlow-Bold.ttf", 40)
     text_font(my_font)
     text_align('CENTER', 'CENTER')
-    text(name, 200, 475)
+    text(name, 200, 500)
 
 
 
     affl = input("Affiliation: ")
-    text(affl, 200, 525)
+    text(affl, 200, 555)
 
     rect_mode(CENTER)
 
 
 
-            
     filename = name +".png"
     save_canvas(filename)
 
