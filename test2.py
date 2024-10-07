@@ -75,6 +75,8 @@ def draw_namecard(name, affl):
     filename = name + ".png"
     img.save(filename)
     
+    return img, filename
+    
 def main():
     name = input("Enter a name: ")
     affl = input("Affiliation: ")

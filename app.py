@@ -1,5 +1,6 @@
 import streamlit as st
 from PIL import Image, ImageDraw, ImageFont
+from test2 import draw_namecard
 
 # Function to generate image with name
 def generate_nametag(name):
@@ -29,10 +30,10 @@ st.title('Name Tag Generator')
 
 # Input for name
 name = st.text_input('Enter your name:')
-
-if name:
+affil = st.text_input('Enter your affiliation:')
+if name and affil:
     # Generate image
-    img, img_path = generate_nametag(name)
+    img, img_path = draw_namecard(name, affil)
     
     # Display image
     st.image(img, caption='Generated Name Tag')
@@ -45,3 +46,5 @@ if name:
             file_name=img_path,
             mime="image/png"
         )
+    
+    name, affil = None, None
