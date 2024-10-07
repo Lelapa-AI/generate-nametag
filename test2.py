@@ -1,7 +1,7 @@
 from PIL import Image, ImageDraw, ImageFont
 from random import randint, seed
 s = 50
-logo = Image.open('logo.png').resize((s, s))
+logo = Image.open('logo.png').convert('RGBA').resize((80,80))
 pat1 = Image.open('pat1.png').resize((s, s))
 pat2 = Image.open('pat2.png').resize((s, s))
 pat3 = Image.open('pat3.png').resize((s, s))
@@ -64,7 +64,7 @@ def draw_namecard(name, affl):
             message_count += 1
         message_count += 1
 
-    img.paste(logo.resize((80,80)), (160, 160))
+    img.paste(logo, (165, 165), logo)
 
     draw.rectangle([0, 420, 400, 420+300], fill=(255, 255, 255))
 
