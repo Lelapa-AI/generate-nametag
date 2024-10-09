@@ -13,8 +13,8 @@ pat8 = Image.open('pat8.png').resize((s, s))
 pat9 = Image.open('pat9.png').resize((s, s))
 
 # Adds a background colour
-def draw_background(draw):
-    draw.rectangle([0, 0, 400, 666], fill=(0, 0, 0))
+def draw_background(draw, background_color):
+    draw.rectangle([0, 0, 400, 666], fill=background_color)
 
 def draw_namecard(name, affl):
 
@@ -49,18 +49,29 @@ def draw_namecard(name, affl):
     }
 
     seed(5)
-    img = Image.new('RGB', (400, 666), (0, 0, 0))
+    background_color = (0,0,0)
+    if len(name) % 2 == 0:
+        background_color = (255,255,255)
+    
+    img = Image.new('RGB', (400, 666), (0,0,0))
     draw = ImageDraw.Draw(img)
-    draw_background(draw)
+    draw_background(draw, background_color)
 
     namel = name.lower()
     message = [code[letter] for letter in namel]
-    space = 120
+
+    if (len(name) < 7):
+        space = 120
+    else:
+        space = 160
     message_count = 0
     for x in range(0, 400, space):
         for y in range(0, 400, space):
+            
             img.paste(message[0], (x, y))
             img.paste(message[1], (x + space // 2, y + space // 2))
+            img.paste(message[2].resize((s//2,s//2)), (x + space // 2, y))
+            img.paste(message[3].resize((s//2,s//2)), (x, y + space // 2))
             message_count += 1
         message_count += 1
 
